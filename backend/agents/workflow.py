@@ -34,8 +34,12 @@ workflow.add_edge("citation", END)
 
 # Create SQLite checkpointer for persistent conversation storage
 import sqlite3
+from backend.config import settings
 
-db_path = "conversations.db"
+# Ensure directory exists
+os.makedirs(settings.data_dir, exist_ok=True)
+
+db_path = os.path.join(settings.data_dir, "conversations.db")
 
 # Initialize connection and create SqliteSaver
 conn = sqlite3.connect(db_path, check_same_thread=False)

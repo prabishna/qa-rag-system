@@ -3,10 +3,14 @@ import sqlite3
 from datetime import datetime
 import logging
 import os
+from backend.config import settings
 
 logger = logging.getLogger(__name__)
 
-DB_PATH = "rag_system.db"
+# Ensure data directory exists
+os.makedirs(settings.data_dir, exist_ok=True)
+
+DB_PATH = os.path.join(settings.data_dir, "rag_system.db")
 
 def init_db():
     """Initialize the database with necessary tables."""

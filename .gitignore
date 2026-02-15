@@ -27,6 +27,7 @@ volumes/
 
 # Uploads
 uploads/
+data/
 temp/
 
 # Logs

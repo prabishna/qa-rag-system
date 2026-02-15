@@ -115,8 +115,7 @@ services:
       - MILVUS_PORT=19530
     volumes:
       - ./uploads:/app/uploads
-      - ./rag_system.db:/app/rag_system.db
-      - ./conversations.db:/app/conversations.db
+      - ./data:/app/data
       - ./.env:/app/.env
       - /app/.venv
     depends_on:

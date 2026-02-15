@@ -18,6 +18,10 @@ class Settings(BaseSettings):
     chunk_size: int = Field(default=500, env="CHUNK_SIZE")
     chunk_overlap: int = Field(default=50, env="CHUNK_OVERLAP")
     
+    # Data Storage
+    data_dir: str = Field(default="data", env="DATA_DIR")
+
+    
     class Config:
         env_file = ".env"
         case_sensitive = False
