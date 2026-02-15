@@ -1,0 +1,37 @@
+# Core Framework
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+python-multipart==0.0.12
+
+# LangChain & LangGraph
+langgraph==0.2.45
+langchain==0.3.7
+langchain-community==0.3.5
+langchain-openai==0.2.5
+langchain-milvus==0.1.5
+
+# Vector Database
+pymilvus==2.4.8
+
+# Document Processing
+pypdf==5.1.0
+python-docx==1.1.2
+pytesseract==0.3.13
+Pillow==11.0.0
+markdown==3.7
+
+# Embeddings & LLM
+openai==1.54.3
+tiktoken==0.8.0
+
+# MCP Integration
+fastmcp==0.2.0
+nest_asyncio==1.6.0
+
+# Utilities
+python-dotenv==1.0.1
+pydantic==2.9.2
+pydantic-settings==2.6.0
+
+# Search
+duckduckgo-search==6.3.5

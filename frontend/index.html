@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SourceMind AI</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Brand -->
+            <div class="brand">
+                <div class="brand-content">
+                    <i class="fa-solid fa-layer-group brand-icon"></i>
+                    <span class="brand-text">SourceMind AI</span>
+                </div>
+                <button id="sidebarToggle" class="sidebar-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- New Chat -->
+            <button id="newChatBtn" class="new-chat-btn">
+                <i class="fa-solid fa-plus"></i>
+                <span>New Conversation</span>
+            </button>
+
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <div class="section-title">Documents</div>
+                <div id="uploadArea" class="upload-area">
+                    <input type="file" id="fileInput" class="hidden" accept=".pdf,.txt,.md">
+                    <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                    <div class="upload-text">Drop PDF/TXT here</div>
+                </div>
+                <!-- Progress Bar -->
+                <div id="uploadProgress" class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <!-- Status Text -->
+                <div id="uploadStatus" class="upload-status"
+                    style="display:none; text-align:center; font-size:0.75rem; color:var(--text-secondary); margin-top:0.5rem;">
+                </div>
+            </div>
+
+            <!-- File List -->
+            <div class="files-section">
+                <div class="section-title">Uploaded Files</div>
+                <ul id="fileList" class="file-list">
+                    <!-- Files will be injected here -->
+                </ul>
+            </div>
+
+
+
+            <!-- Footer Stats -->
+            <div class="stats-footer">
+                <div id="statusIndicator" class="status-indicator">
+                    <span class="status-dot online"></span>
+                    <span class="status-text">Online</span>
+                </div>
+                <div class="version">v1.2</div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="main-area">
+            <!-- Chat Header -->
+            <header class="chat-header">
+                <div class="conversation-info">
+                    <div class="conversation-title">New Chat</div>
+                    <div id="conversationId" class="conversation-id">New Conversation</div>
+                </div>
+                <!-- Mobile toggles could go here -->
+            </header>
+
+            <!-- Chat Messages -->
+            <div id="chatMessages" class="chat-messages">
+                <!-- Welcome Screen -->
+                <div class="welcome-screen">
+                    <div class="welcome-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <div class="welcome-title">SourceMind AI</div>
+                    <div class="welcome-subtitle">Secure Knowledge Retrieval System</div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <textarea id="chatInput" class="chat-input" placeholder="Type your question..." rows="1"></textarea>
+                <button id="sendBtn" class="send-btn" disabled>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </main>
+
+        <!-- Right Sidebar (History) -->
+        <aside class="right-sidebar">
+            <div class="sidebar-header">
+                <div class="section-title">History</div>
+                <button id="historyToggle" class="icon-btn" title="Refresh History">
+                    <i class="fa-solid fa-rotate-right"></i>
+                </button>
+            </div>
+            <ul id="historyList" class="file-list history-list">
+                <!-- History injected here -->
+            </ul>
+        </aside>
+    </div>
+
+    <!-- App Logic -->
+    <script src="app.js"></script>
+</body>
+
+</html>
