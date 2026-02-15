@@ -1,4 +1,5 @@
 # Document Q&A RAG System
+# Document Q&A RAG System
 
 A multi-agent AI system that reads your documents and answers questions about them with high accuracy.
 
@@ -36,7 +37,13 @@ Create a `.env` file with your API key:
 
 ```bash
 # Create .env file
+# Create .env file
 cp .env.example .env
+```
+
+Edit `.env` and add your key:
+```env
+OPENAI_API_KEY=sk-your-key-here...
 ```
 
 Edit `.env` and add your key:
@@ -48,7 +55,37 @@ OPENAI_API_KEY=sk-your-key-here...
 
 Start everything with one command:
 
+### 3. Run
+
+Start everything with one command:
+
 ```bash
+docker-compose up --build -d
+```
+
+### 4. Use It
+
+Open your browser to **http://localhost:8000**.
+
+1.  Upload a PDF document.
+2.  Start asking questions!
+
+---
+
+## How It Works
+
+When you ask a question:
+1.  **AI Agents** analyze if you need to look up a document or search the web.
+2.  **Hybrid Search** finds the most relevant chunks of text from your uploaded files.
+3.  **Cross-Encoder** re-ranks them to pick the very best matches.
+4.  **GPT-4** writes an answer using *only* those facts and adds citations.
+
+---
+
+## Testing
+
+To run backend tests locally:
+
 docker-compose up --build -d
 ```
 
